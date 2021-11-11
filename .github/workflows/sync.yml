@@ -24,6 +24,6 @@ jobs:
         run: choco install sliksvn
         
       - name: checkout the SVN source
-        run: svn checkout https://svn.code.sf.net/p/somfree/code/trunk somfree-code
+        run: svn checkout https://svn.code.sf.net/p/somfree/code/trunk/ somfree-code
         
 
