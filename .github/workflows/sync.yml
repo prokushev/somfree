@@ -20,7 +20,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: checkout the SVN source
+      name: checkout the SVN source
       run: svn checkout svn://svnversion/trunk
       shell: cmd
 
