@@ -31,6 +31,8 @@ jobs:
         
       - name: init GIT repo
         run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           git init
           echo .svn/ > .gitignore
           git add .gitignore; git commit -m 'Initial .gitignore'
@@ -44,7 +46,5 @@ jobs:
       - name: PULL GIT repo to original-git branch
         run: |
           git checkout -b import-git master
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
           git remote add original-git https://github.com/prokushev/somfree
           git pull original-git master
