@@ -26,6 +26,23 @@ jobs:
       - name: checkout the SVN source
         run: |
           svn checkout svn://svn.code.sf.net/p/somfree/code/trunk somfree-code
-          dir
+          cd somfree-code
+        shell: cmd
         
+      - name: init GIT repo
+        run: |
+          git init
+          echo .svn/ > .gitignore
+          git add .gitignore; git commit -m 'Initial .gitignore'
 
+      - name: Move SVN code to import-svn branch
+        run: |
+          git checkout -b import-svn
+          git add -A
+          git commit -m 'Initial SVN'
+
+      - name: PULL GIT repo to original-git branch
+        run: |
+          git checkout -b import-git master
+          git remote add original-git https://github.com/prokushev/somfree
+          git pull original-git master
