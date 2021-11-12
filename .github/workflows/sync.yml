@@ -47,4 +47,4 @@ jobs:
         run: |
           git checkout -b import-git master
           git remote add original-git https://github.com/prokushev/somfree
-          git pull original-git master
+          git pull original-git master --allow-unrelated-histories
