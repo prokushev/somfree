@@ -50,4 +50,4 @@ jobs:
           git pull original-git master --allow-unrelated-histories
           
       - name: push
-        run: git push
+        run: git push original-git
